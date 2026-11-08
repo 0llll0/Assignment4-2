@@ -7,11 +7,15 @@ function Todolist({ todo = [], setTodo }) {
 
     const [filter, setFilter] = useState("전체");
     const filterTodo = filter === "전체" ? todo : todo.filter((e) => e.status === filter);
+    const doneCount = todo.filter((e) => e.status === "완료").length;
 
     return (
         <div className="md:col-span-2 bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col gap-6">
             <div className="flex items-center justify-between flex-wrap gap-3">
-                <h2 className="text-lg font-semibold text-gray-800">할 일 목록</h2>
+                <div>
+                    <h2 className="text-lg font-semibold text-gray-800">할 일 목록</h2>
+                    <p className="text-xs text-gray-500">전체 {todo.length}개 · 완료 {doneCount}개</p>
+                </div>
 
                 <div className="flex items-center gap-2 text-sm">
                     <button onClick={() => setFilter("전체")} className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-500 transition" >
