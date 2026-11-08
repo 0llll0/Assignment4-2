@@ -14,7 +14,7 @@ function Todolist({ todo = [], setTodo }) {
                 <h2 className="text-lg font-semibold text-gray-800">할 일 목록</h2>
 
                 <div className="flex items-center gap-2 text-sm">
-                    <button onClick={() => setFilter("전체")} className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-500 transition" >
+                    <button onClick={() => setFilter("전체")} className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-500 transition" >
                         전체
                     </button>
                     <button onClick={() => setFilter("진행 중")}

@@ -34,7 +34,7 @@ function TodoForm({ setTodo }) {
                 </div>
 
                 <button type="submit"
-                    className="cursor-pointer mt-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-2 rounded-lg shadow">
+                    className="cursor-pointer mt-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold py-2 rounded-lg shadow">
                     추가하기
                 </button>
             </form>
