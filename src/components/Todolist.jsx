@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function Todolist({ todo = [], setTodo }) {
-    function deleteTodo(index) {
-        setTodo(todo.filter((e, i) => i !== index));
+    function deleteTodo(target) {
+        setTodo(todo.filter((e) => e !== target));
     }
 
     const [filter, setFilter] = useState("전체");
@@ -45,7 +45,7 @@ function Todolist({ todo = [], setTodo }) {
                                 <p className="text-xs text-gray-500">상태: {e.status}</p>
                             </div>
 
-                            <button className="text-red-500 hover:text-red-600 text-xs font-medium" onClick={() => deleteTodo(i)}>
+                            <button className="text-red-500 hover:text-red-600 text-xs font-medium" onClick={() => deleteTodo(e)}>
                                 삭제
                             </button>
                         </div>
