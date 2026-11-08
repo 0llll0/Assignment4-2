@@ -5,25 +5,25 @@ function Todolist({ todo = [], setTodo }) {
         setTodo(todo.filter((e, i) => i !== index));
     }
 
-    const [filter, setFilter] = useState("Hamisi");
-    const filterTodo = filter === "Hamisi" ? todo : todo.filter((e) => e.status === filter);
+    const [filter, setFilter] = useState("전체");
+    const filterTodo = filter === "전체" ? todo : todo.filter((e) => e.status === filter);
 
     return (
         <div className="md:col-span-2 bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col gap-6">
             <div className="flex items-center justify-between flex-wrap gap-3">
-                <h2 className="text-lg font-semibold text-gray-800">Tapşırıqlar</h2>
+                <h2 className="text-lg font-semibold text-gray-800">할 일 목록</h2>
 
                 <div className="flex items-center gap-2 text-sm">
-                    <button onClick={() => setFilter("Hamisi")} className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-500 transition" >
-                        Hamısı
+                    <button onClick={() => setFilter("전체")} className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-500 transition" >
+                        전체
                     </button>
-                    <button onClick={() => setFilter("Davam edən")}
+                    <button onClick={() => setFilter("진행 중")}
                         className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-yellow-500 text-white hover:bg-yellow-400 transition">
-                        Davam edən
+                        진행 중
                     </button>
-                    <button onClick={() => setFilter("Tamamlanan")}
+                    <button onClick={() => setFilter("완료")}
                         className="cursor-pointer px-4 py-2 rounded-lg font-medium bg-green-600 text-white hover:bg-green-500 transition">
-                        Tamamlanan
+                        완료
                     </button>
                 </div>
             </div>
@@ -31,18 +31,18 @@ function Todolist({ todo = [], setTodo }) {
             <div className="flex flex-col gap-3">
                 {filterTodo.length === 0 ? (
                     <div className="text-center text-gray-500 text-sm py-10 border-t border-gray-100">
-                        Tapşırıq yoxdur
+                        할 일이 없습니다
                     </div>
                 ) : (
                     filterTodo.map((e, i) => (
                         <div key={i} className="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-lg px-4 py-3">
                             <div>
                                 <p className="text-gray-800 font-medium">{e.task}</p>
-                                <p className="text-xs text-gray-500">Status: {e.status}</p>
+                                <p className="text-xs text-gray-500">상태: {e.status}</p>
                             </div>
 
                             <button className="text-red-500 hover:text-red-600 text-xs font-medium" onClick={() => deleteTodo(i)}>
-                                Sil
+                                삭제
                             </button>
                         </div>
                     ))

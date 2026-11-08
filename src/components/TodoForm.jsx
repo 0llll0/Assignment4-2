@@ -16,26 +16,26 @@ function TodoForm({ setTodo }) {
     return (
         <>
             <form onSubmit={submit} className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col gap-4">
-                <h2 className="text-lg font-semibold text-gray-800 text-center">Tapşırıq əlavə et</h2>
+                <h2 className="text-lg font-semibold text-gray-800 text-center">할 일 추가</h2>
                 <div className="flex flex-col gap-2">
-                    <label className="text-sm  text-gray-600">Başlıq</label>
-                    <input required minLength="5" maxLength="66"
-                        type="text" placeholder="Tapşırıq adı" name="task" value={form.task} onChange={change}
+                    <label className="text-sm  text-gray-600">제목</label>
+                    <input required minLength="2" maxLength="66"
+                        type="text" placeholder="할 일을 입력하세요" name="task" value={form.task} onChange={change}
                         className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label className="text-sm  text-gray-600">Status</label>
+                    <label className="text-sm  text-gray-600">상태</label>
                     <select name="status" required value={form.status} onChange={change}
                         className="cursor-pointer w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
                         <option value="" className="text-black disabled selected hidden"></option>
-                        <option>Davam edən</option>
-                        <option>Tamamlanan</option>
+                        <option>진행 중</option>
+                        <option>완료</option>
                     </select>
                 </div>
 
                 <button type="submit"
                     className="cursor-pointer mt-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-2 rounded-lg shadow">
-                    Əlavə et
+                    추가하기
                 </button>
             </form>
         </>
